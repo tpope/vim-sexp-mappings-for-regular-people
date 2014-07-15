@@ -1,15 +1,10 @@
 " after/plugin/sexp.vim - Sexp mappings for regular people
 " Maintainer:   Tim Pope <code@tpope.net>
 
-if !exists('g:sexp_loaded') || exists("g:after_loaded_sexp")
+if exists("g:after_loaded_sexp") || &cp
   finish
 endif
 let g:after_sexp_loaded = 1
-
-augroup sexp
-  autocmd!
-  execute 'autocmd FileType' get(g:, 'sexp_filetypes', 'lisp,scheme,clojure') 'call s:sexp_mappings()'
-augroup END
 
 function! s:map_sexp_wrap(type, target, left, right, pos)
   execute (a:type ==# 'v' ? 'x' : 'n').'noremap'
@@ -19,6 +14,9 @@ function! s:map_sexp_wrap(type, target, left, right, pos)
 endfunction
 
 function! s:sexp_mappings() abort
+  if !exists('g:loaded_sexp')
+    return
+  endif
   call s:map_sexp_wrap('e', 'cseb', '(', ')', 0)
   call s:map_sexp_wrap('e', 'cse(', '(', ')', 0)
   call s:map_sexp_wrap('e', 'cse)', '(', ')', 1)
@@ -53,3 +51,16 @@ function! s:sexp_mappings() abort
   nmap <buffer> <(  <Plug>(sexp_capture_prev_element)
   nmap <buffer> >)  <Plug>(sexp_capture_next_element)
 endfunction
+
+function! s:setup() abort
+  augroup sexp_maps_for_regular_people
+    autocmd!
+    execute 'autocmd FileType' get(g:, 'sexp_filetypes', 'lisp,scheme,clojure') 'call s:sexp_mappings()'
+  augroup END
+endfunction
+
+if has('vim_starting') && !exists('g:loaded_sexp')
+  au VimEnter * call s:setup()
+else
+  call s:setup()
+endif
