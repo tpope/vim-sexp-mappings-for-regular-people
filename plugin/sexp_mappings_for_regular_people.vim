@@ -14,7 +14,7 @@ function! s:map_sexp_wrap(type, target, left, right, pos)
 endfunction
 
 function! s:sexp_mappings() abort
-  if !exists('g:loaded_sexp')
+  if !exists('g:sexp_loaded')
     return
   endif
   call s:map_sexp_wrap('e', 'cseb', '(', ')', 0)
@@ -59,7 +59,7 @@ function! s:setup() abort
   augroup END
 endfunction
 
-if has('vim_starting') && !exists('g:loaded_sexp')
+if has('vim_starting') && !exists('g:sexp_loaded')
   au VimEnter * call s:setup()
 else
   call s:setup()
