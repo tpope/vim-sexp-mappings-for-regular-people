@@ -1,10 +1,10 @@
 " after/plugin/sexp.vim - Sexp mappings for regular people
 " Maintainer:   Tim Pope <code@tpope.net>
 
-if exists("g:after_loaded_sexp") || &cp
+if exists("g:loaded_sexp_mappings_for_regular_people") || &cp
   finish
 endif
-let g:after_sexp_loaded = 1
+let g:loaded_sexp_mappings_for_regular_people = 1
 
 function! s:map_sexp_wrap(type, target, left, right, pos)
   execute (a:type ==# 'v' ? 'x' : 'n').'noremap'
