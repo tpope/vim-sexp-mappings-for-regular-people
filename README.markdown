@@ -38,7 +38,7 @@ identifier characters.  This might be a terrible idea.
 More meta madness in the defaults here.  I've taken `>f` and `<f` to move a
 form and `>e` and `<e` to move an element.
 
-Slurpage and barfage are handled by `>)`, `<)`, `<(`, and `<)`, where the
+Slurpage and barfage are handled by `>)`, `<)`, `>(`, and `<(`, where the
 angle bracket indicates the direction, and the parenthesis indicates which end
 to operate on.
 
