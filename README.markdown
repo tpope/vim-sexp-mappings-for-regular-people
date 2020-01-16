@@ -42,6 +42,8 @@ Slurpage and barfage are handled by `>)`, `<)`, `>(`, and `<(`, where the
 angle bracket indicates the direction, and the parenthesis indicates which end
 to operate on.
 
+Raise an element or form (replacing its parent form) using `<re` and `<rf` respectively.
+
 ### Insertion mappings
 
 Use `<I` and `>I` to insert at the beginning and ending of a form.
