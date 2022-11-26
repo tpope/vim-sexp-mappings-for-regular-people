@@ -15,10 +15,10 @@ You know the drill.  Here's a copy and paste to install the works with
 [pathogen.vim](https://github.com/tpope/vim-pathogen).
 
     cd ~/.vim/bundle
-    git clone git://github.com/tpope/vim-sexp-mappings-for-regular-people.git
-    git clone git://github.com/guns/vim-sexp.git
-    git clone git://github.com/tpope/vim-repeat.git
-    git clone git://github.com/tpope/vim-surround.git
+    git clone https://github.com/tpope/vim-sexp-mappings-for-regular-people.git
+    git clone https://github.com/guns/vim-sexp.git
+    git clone https://github.com/tpope/vim-repeat.git
+    git clone https://github.com/tpope/vim-surround.git
 
 ## Provided mappings
 
