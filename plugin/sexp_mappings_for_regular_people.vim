@@ -64,7 +64,7 @@ endfunction
 function! s:setup() abort
   augroup sexp_mappings_for_regular_people
     autocmd!
-    execute 'autocmd FileType' get(g:, 'sexp_filetypes', 'lisp,scheme,clojure') 'call s:sexp_mappings()'
+    execute 'autocmd FileType' get(g:, 'sexp_filetypes', 'lisp,scheme,clojure,fennel') 'call s:sexp_mappings()'
   augroup END
 endfunction
 
